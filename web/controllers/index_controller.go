@@ -1,4 +1,4 @@
-// file: controllers/user_controller.go
+// file: controllers/index_controller.go
 
 package controllers
 
@@ -11,14 +11,14 @@ import (
 	"github.com/kataras/iris/sessions"
 )
 
-// UserController is our /user controller.
+// UserController is our /admin controller.
 // UserController is responsible to handle the following requests:
-// GET  			/user/register
-// POST 			/user/register
-// GET 				/user/login
-// POST 			/user/login
-// GET 				/user/me
-// All HTTP Methods /user/logout
+// GET  			/admin/register
+// POST 			/admin/register
+// GET 				/admin/login
+// POST 			/admin/login
+// GET 				/admin/me
+// All HTTP Methods /admin/logout
 type UserController struct {
 	// context is auto-binded by Iris on each request,
 	// remember that on each incoming request iris creates a new UserController each time,
@@ -51,7 +51,7 @@ func (c *UserController) logout() {
 }
 
 var registerStaticView = mvc.View{
-	Name: "user/register.html",
+	Name: "admin/register.html",
 	Data: iris.Map{"Title": "User Registration"},
 }
 
@@ -73,13 +73,13 @@ func (c *UserController) PostRegister() mvc.Result {
 		password  = c.Ctx.FormValue("password")
 	)
 
-	// create the new user, the password will be hashed by the service.
+	// create the new admin, the password will be hashed by the service.
 	u, err := c.Service.Create(password, datamodels.User{
 		Username:  username,
 		Firstname: firstname,
 	})
 
-	// set the user's id to this session even if err != nil,
+	// set the admin's id to this session even if err != nil,
 	// the zero id doesn't matters because .getCurrentUserID() checks for that.
 	// If err != nil then it will be shown, see below on mvc.Response.Err: err.
 	c.Session.Set(userIDKey, u.ID)
@@ -87,8 +87,8 @@ func (c *UserController) PostRegister() mvc.Result {
 	return mvc.Response{
 		// if not nil then this error will be shown instead.
 		Err: err,
-		// redirect to /user/me.
-		Path: "/user/me",
+		// redirect to /admin/me.
+		Path: "/admin/me",
 		// When redirecting from POST to GET request you -should- use this HTTP status code,
 		// however there're some (complicated) alternatives if you
 		// search online or even the HTTP RFC.
@@ -100,7 +100,7 @@ func (c *UserController) PostRegister() mvc.Result {
 }
 
 var loginStaticView = mvc.View{
-	Name: "user/login.html",
+	Name: "admin/login.html",
 	Data: iris.Map{"Title": "User Login"},
 }
 
@@ -125,35 +125,35 @@ func (c *UserController) PostLogin() mvc.Result {
 
 	if !found {
 		return mvc.Response{
-			Path: "/user/register",
+			Path: "/admin/register",
 		}
 	}
 
 	c.Session.Set(userIDKey, u.ID)
 
 	return mvc.Response{
-		Path: "/user/me",
+		Path: "/admin/me",
 	}
 }
 
 // GetMe handles GET: http://localhost:8080/user/me.
 func (c *UserController) GetMe() mvc.Result {
 	if !c.isLoggedIn() {
-		// if it's not logged in then redirect user to the login page.
-		return mvc.Response{Path: "/user/login"}
+		// if it's not logged in then redirect admin to the login page.
+		return mvc.Response{Path: "/admin/login"}
 	}
 
 	u, found := c.Service.GetByID(c.getCurrentUserID())
 	if !found {
-		// if the  session exists but for some reason the user doesn't exist in the "database"
+		// if the  session exists but for some reason the admin doesn't exist in the "database"
 		// then logout and re-execute the function, it will redirect the client to the
-		// /user/login page.
+		// /admin/login page.
 		c.logout()
 		return c.GetMe()
 	}
 
 	return mvc.View{
-		Name: "user/me.html",
+		Name: "admin/me.html",
 		Data: iris.Map{
 			"Title": "Profile of " + u.Username,
 			"User":  u,
@@ -167,5 +167,5 @@ func (c *UserController) AnyLogout() {
 		c.logout()
 	}
 
-	c.Ctx.Redirect("/user/login")
+	c.Ctx.Redirect("/admin/login")
 }

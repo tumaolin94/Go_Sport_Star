@@ -33,17 +33,17 @@ type UsersController struct {
 // func (c *UsersController) Get() (results []viewmodels.User) {
 // 	data := c.Service.GetAll()
 //
-// 	for _, user := range data {
-// 		results = append(results, viewmodels.User{user})
+// 	for _, admin := range data {
+// 		results = append(results, viewmodels.User{admin})
 // 	}
 // 	return
 // }
-// otherwise just return the datamodels.
+// otherwise just return the models.
 func (c *UsersController) Get() (results []datamodels.User) {
 	return c.Service.GetAll()
 }
 
-// GetBy returns a user.
+// GetBy returns a admin.
 // Demo:
 // curl -i -u admin:password http://localhost:8080/users/1
 func (c *UsersController) GetBy(id int64) (user datamodels.User, found bool) {
@@ -56,7 +56,7 @@ func (c *UsersController) GetBy(id int64) (user datamodels.User, found bool) {
 	return u, found // it will throw/emit 404 if found == false.
 }
 
-// PutBy updates a user.
+// PutBy updates a admin.
 // Demo:
 // curl -i -X PUT -u admin:password -F "username=kataras"
 // -F "password=rawPasswordIsNotSafeIfOrNotHTTPs_You_Should_Use_A_client_side_lib_for_hash_as_well"
@@ -72,13 +72,13 @@ func (c *UsersController) PutBy(id int64) (datamodels.User, error) {
 	return c.Service.Update(id, u)
 }
 
-// DeleteBy deletes a user.
+// DeleteBy deletes a admin.
 // Demo:
 // curl -i -X DELETE -u admin:password http://localhost:8080/users/1
 func (c *UsersController) DeleteBy(id int64) interface{} {
 	wasDel := c.Service.DeleteByID(id)
 	if wasDel {
-		// return the deleted user's ID
+		// return the deleted admin's ID
 		return map[string]interface{}{"deleted": id}
 	}
 	// right here we can see that a method function
