@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91ac49f5-d3db-4441-9600-dd12efc9fd74" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/conf/db.go" beforeDir="false" afterPath="$PROJECT_DIR$/conf/db.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasource/dbhelper.go" beforeDir="false" afterPath="$PROJECT_DIR$/datasource/dbhelper.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/superstar_dao.go" beforeDir="false" afterPath="$PROJECT_DIR$/dao/superstar_dao.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,7 +42,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/datasource/dbhelper.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="405">
@@ -55,11 +54,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dao/superstar_dao.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+            <state relative-caret-position="300">
+              <caret line="56" column="1" lean-forward="true" selection-start-line="56" selection-start-column="1" selection-end-line="56" selection-end-column="1" />
+              <folding>
+                <element signature="e#13#70#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -139,7 +141,6 @@
         <option value="$PROJECT_DIR$/_demo/iris/mainIris.go" />
         <option value="$PROJECT_DIR$/_demo/xorm/mainXorm.go" />
         <option value="$PROJECT_DIR$/models/star_info.go" />
-        <option value="$PROJECT_DIR$/dao/superstar_dao.go" />
         <option value="$PROJECT_DIR$/services/superstar_service.go" />
         <option value="$PROJECT_DIR$/web/controllers/index_controller.go" />
         <option value="$PROJECT_DIR$/web/controllers/admin_controller.go" />
@@ -147,6 +148,7 @@
         <option value="$PROJECT_DIR$/web/views/info.html" />
         <option value="$PROJECT_DIR$/datasource/dbhelper.go" />
         <option value="$PROJECT_DIR$/conf/db.go" />
+        <option value="$PROJECT_DIR$/dao/superstar_dao.go" />
       </list>
     </option>
   </component>
@@ -287,12 +289,12 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24964234" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24964234" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.32891566" />
+      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.32891566" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
@@ -387,13 +389,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dao/superstar_dao.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/star_info.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -414,6 +409,16 @@
           <caret line="68" column="5" lean-forward="true" selection-start-line="68" selection-start-column="5" selection-end-line="68" selection-end-column="5" />
           <folding>
             <element signature="e#20#65#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/superstar_dao.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="56" column="1" lean-forward="true" selection-start-line="56" selection-start-column="1" selection-end-line="56" selection-end-column="1" />
+          <folding>
+            <element signature="e#13#70#0" expanded="true" />
           </folding>
         </state>
       </provider>
