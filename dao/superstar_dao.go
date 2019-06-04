@@ -29,10 +29,11 @@ func (d *SuperStarDao) Get(id int) *models.StarInfo {
 }
 
 func (d *SuperStarDao) GetAll() []models.StarInfo {
-	datalist := []models.StarInfo{}
+	datalist := make([]models.StarInfo, 0)
+	log.Println(datalist)
 	err := d.engine.Desc("id").Find(&datalist)
 	if err != nil {
-		log.Print(err)
+		log.Fatal("GetAll err=",err)
 		return datalist
 	} else {
 		return datalist

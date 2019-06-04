@@ -2,6 +2,7 @@ package datasource
 
 import (
 	"fmt"
+	_ "github.com/go-sql-driver/mysql"
 	"github.com/go-xorm/xorm"
 	"log"
 	"superstar/conf"
@@ -29,7 +30,7 @@ func InstanceMaster() *xorm.Engine {
 	c := conf.MasterDbConfig
 	driveSource := fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=utf8",
 		c.User, c.Pwd, c.Host, c.Port, c.DbName)
-
+	log.Println("dbhelper.DbInstanceMaster connect =", driveSource)
 	engine, err := xorm.NewEngine(conf.DriverName, driveSource)
 
 	if err != nil {

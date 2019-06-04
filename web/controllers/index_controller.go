@@ -25,6 +25,7 @@ type IndexController struct {
 }
 
 func (c *IndexController) Get() mvc.Result{
+	//log.Fatal("Get22222")
 	datalist := c.Service.GetAll()
 	return mvc.View{
 		Name:"index.html",

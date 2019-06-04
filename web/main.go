@@ -1,13 +1,13 @@
 package main
 
 import (
-	"github.com/kataras/iris/_examples/structuring/bootstrap/bootstrap"
-	"github.com/kataras/iris/_examples/structuring/bootstrap/middleware/identity"
-	"github.com/kataras/iris/_examples/structuring/bootstrap/routes"
+	"superstar/bootstrap"
+	"superstar/web/middleware/identity"
+	"superstar/web/routes"
 )
 
 func newApp() *bootstrap.Bootstrapper {
-	app := bootstrap.New("Awesome App", "kataras2006@hotmail.com")
+	app := bootstrap.New("Superstar database", "Richard Tu")
 	app.Bootstrap()
 	app.Configure(identity.Configure, routes.Configure)
 	return app
