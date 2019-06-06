@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91ac49f5-d3db-4441-9600-dd12efc9fd74" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bootstrap/bootstrapper.go" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/bootstrapper.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/views/admin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/views/admin/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasource/dbhelper.go" beforeDir="false" afterPath="$PROJECT_DIR$/datasource/dbhelper.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,11 +51,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/views/admin/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="31" column="35" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
+            <state relative-caret-position="315">
+              <caret line="21" column="44" lean-forward="true" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -67,6 +65,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="310">
               <caret line="53" column="6" selection-start-line="53" selection-start-column="6" selection-end-line="53" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/datasource/dbhelper.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="287">
+              <caret line="39" column="19" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -108,6 +115,7 @@
       <find>GetBy</find>
       <find>FromUnixtime</find>
       <find>SetupViews</find>
+      <find>admin</find>
       <find>setupviews</find>
     </findStrings>
   </component>
@@ -136,12 +144,12 @@
         <option value="$PROJECT_DIR$/../github.com/kataras/iris/_examples/structuring/bootstrap/routes/routes.go" />
         <option value="$PROJECT_DIR$/web/main.go" />
         <option value="$PROJECT_DIR$/web/middleware/identity/identity.go" />
-        <option value="$PROJECT_DIR$/datasource/dbhelper.go" />
         <option value="$PROJECT_DIR$/dao/superstar_dao.go" />
         <option value="$PROJECT_DIR$/web/controllers/index_controller.go" />
         <option value="$PROJECT_DIR$/web/controllers/admin_controller.go" />
         <option value="$PROJECT_DIR$/bootstrap/bootstrapper.go" />
         <option value="$PROJECT_DIR$/web/views/admin/index.html" />
+        <option value="$PROJECT_DIR$/datasource/dbhelper.go" />
       </list>
     </option>
   </component>
@@ -336,16 +344,16 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.2532189" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.2532189" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.49928468" weight="0.32891566" />
+      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.49928468" visible="true" weight="0.32891566" />
       <window_info anchor="bottom" id="Database Changes" order="1" />
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.5007153" side_tool="true" weight="0.32891566" />
       <window_info anchor="bottom" id="Version Control" order="3" />
       <window_info anchor="bottom" id="Docker" order="4" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Find" order="6" weight="0.32891566" />
-      <window_info active="true" anchor="bottom" id="Run" order="7" sideWeight="0.49928468" visible="true" weight="0.32891566" />
+      <window_info anchor="bottom" id="Run" order="7" sideWeight="0.49928468" weight="0.32891566" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
@@ -472,16 +480,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/datasource/dbhelper.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="36" column="35" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
-          <folding>
-            <element signature="e#20#97#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/conf/db.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -588,6 +586,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/views/admin/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="44" lean-forward="true" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/bootstrap/bootstrapper.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="310">
@@ -595,10 +600,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/views/admin/index.html">
+    <entry file="file://$PROJECT_DIR$/datasource/dbhelper.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="35" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
+        <state relative-caret-position="287">
+          <caret line="39" column="19" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="19" />
         </state>
       </provider>
     </entry>

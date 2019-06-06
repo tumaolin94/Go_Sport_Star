@@ -37,6 +37,9 @@ func InstanceMaster() *xorm.Engine {
 		log.Fatal("dbhelper.DbInstanceMaster error=", err)
 		return nil
 	} else {
+		//add cache
+		cacher := xorm.NewLRUCacher(xorm.NewMemoryStore(), 1000)
+		engine.SetDefaultCacher(cacher)
 		masterEngine = engine
 		return masterEngine
 	}
