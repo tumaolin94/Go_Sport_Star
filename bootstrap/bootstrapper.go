@@ -1,6 +1,7 @@
 package bootstrap
 
 import (
+	"copy_super/superstar/conf"
 	"time"
 
 	"github.com/gorilla/securecookie"
@@ -41,7 +42,17 @@ func New(appName, appOwner string, cfgs ...Configurator) *Bootstrapper {
 
 // SetupViews loads the templates.
 func (b *Bootstrapper) SetupViews(viewsDir string) {
-	b.RegisterView(iris.HTML(viewsDir, ".html").Layout("shared/layout.html"))
+	htmlEngine := iris.HTML(viewsDir, ".html").Layout("shared/layout.html")
+	htmlEngine.Reload(false)
+	htmlEngine.AddFunc("FromUnixtimeShort", func(t int) string {
+		dt := time.Unix(int64(t), int64(0))
+		return dt.Format(conf.SysTimeformShort)
+	})
+	htmlEngine.AddFunc("FromUnixtime", func(t int) string {
+		dt := time.Unix(int64(t), int64(0))
+		return dt.Format(conf.SysTimeform)
+	})
+	b.RegisterView(htmlEngine)
 }
 
 // SetupSessions initializes the sessions, optionally.
