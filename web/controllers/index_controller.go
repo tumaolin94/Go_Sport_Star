@@ -4,6 +4,9 @@ package controllers
 
 import (
 	"github.com/kataras/iris/mvc"
+	"log"
+	"superstar/datasource"
+	"superstar/models"
 	"superstar/services"
 
 	"github.com/kataras/iris"
@@ -61,5 +64,16 @@ func (c *IndexController) GetSearch() mvc.Result{
 			"Title": "球星库",
 			"Datalist": datalist,
 		},
+	}
+}
+// http://localhost:8080/clearcache
+func (c *IndexController) GetClearcache() mvc.Result {
+	err := datasource.InstanceMaster().ClearCache(&models.StarInfo{})
+	if err != nil {
+		log.Fatal(err)
+	}
+	// set the model and render the view template.
+	return mvc.Response{
+		Text: "xorm clear catch",
 	}
 }
